@@ -1,0 +1,45 @@
+﻿@model SanPham
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="@Model.Anh" alt="">
+        </div>
+        <div class="col-6">
+            <h2>@Model.Ten</h2>
+            <div>
+                <span>Thương Hiệu :@ViewBag.thuongHieu</span>
+                <div class="background-danger">@Model.Gia</div>
+                <span>Tình trạng:còn hàng</span>
+            </div>
+            <p>
+                ậccasjcj
+            </p>
+        </div>
+    </div>
+    <div>
+        <h3>Sản Phẩm tương tự</h3>
+        @foreach (var item in (IQueryable<SanPham>)ViewBag.SPTuongTu)
+        {
+            <div class="border border-secondary">
+                <a href="~/ChiTietSP?id=@item.MaSP">
+                    <div class="col-3">
+                        <div><img src="@item.Anh" alt=""></div>
+                        <h2>@item.Ten</h2>
+                        <div>
+                            <b>@Math.Round((double)(item.Gia * (item.KhuyenMai / 100)))</b> <span>@item.Gia</span>
+
+                        </div>
+
+                        <div></div>
+
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

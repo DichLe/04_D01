@@ -1,0 +1,14 @@
+﻿@model IEnumerable<LoaiSP>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                @foreach (var item in Model)
+                {
+                    <li class="nav-item"><a href="~/SPTheoLoai/?maLoai=@item.MaLoai&index=1">@item.Ten</a></li>
+
+                }
+
+            </ul>
+        </div></div>    <div class="banner w-85">
+        <img src="./img/the-gioi-do-gia-dung.jpg">
+    </div>

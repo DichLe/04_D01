@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SanPham>
+@{
+    ViewBag.Title = "SPTheoLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="border border-secondary">
+            <a href="~/ChiTietSP?id=@item.MaSP">
+                <div class="col-3">
+                    <div><img src="@item.Anh" alt=""></div>
+                    <h2>@item.Ten</h2>
+                    <div>
+                        <b>@Math.Round((double)(item.Gia * (item.KhuyenMai / 100)))</b> <span>@item.Gia</span>
+
+                    </div>
+
+                    <div></div>
+
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
